@@ -23,12 +23,11 @@ Author: Alvin Lin (alvin.lin.dev@gmail)
 
 from Bot import Bot
 from Keys import *
-from Auto_cube_wash import Auto_cube_wash
+# from Auto_cube_wash import Auto_cube_wash
 
 import sys
-sys.path.append('C:/0_tsa/Code/Python/Python_TMS/OSK/rune/')
+# sys.path.append('C:/0_tsa/Code/Python/Python_TMS/OSK/rune/')
 
-from rune import *
 from rune_solver import find_arrow_directions
 from interception import *
 from game import Game
@@ -611,7 +610,6 @@ if __name__ == "__main__":
                 time.sleep(0.5)
                 p.press("D")
                 time.sleep(2)
-                # bot.click(b_f_pt, 0.25)
                 p.press("F")
         # AK
         elif strPro == 'AK':
