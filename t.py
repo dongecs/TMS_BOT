@@ -2,7 +2,8 @@
 # Auto-Kain
 
 
-import pyautogui
+import string
+import pyautogui as pag
 
 from ctypes import *
 
@@ -22,7 +23,9 @@ import numpy as np
 import cv2 as cv
 import pytesseract
 
-sys.path.append('C:/0_tsa/Code/Python/Python_TMS/OSK/rune/')
+sys.path.append('C:/0_tsa/Code/Python/Python_TMS/Bot_t/')
+sys.path.append('C:/0_tsa/Code/Python/Python_TMS/maple_cube/')
+from image_function import ImgFuction
 from game import Game
 import gdi_capture
 
@@ -79,10 +82,25 @@ def legendInner():
         
     
 if __name__ == "__main__":
+
+    imgf = ImgFuction()
+
+    # p_minimap = imgf.getScreenImg('p_mini_map.png')
+    # p_minimap_world = './pic_src/world_minimap.png'
+    # imgf.locatesOnImg(p_minimap, p_minimap_world, 0.98)
+
+    imgf.getScreenImgByGui()
     
-    minimap = (0, 80, 0, 300)
-    img = get_minimap_image(minimap)
+    # try:
+    #     loca = pag.locateOnScreen('./pic_src/world_minimap.png')
+    #     print ('loca: ', loca)
+    # except TypeError as e:
+    #     print('no loca:', e)
+
+    # minimap = (0, 80, 0, 300)
+    # img = get_minimap_image(minimap)
     
+
     # legendInner()
 
     '''

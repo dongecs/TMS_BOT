@@ -33,9 +33,6 @@ from interception import *
 from game import Game
 from player import Player
 
-import win32api
-import win32con
-import win32gui
 import time
 import random
 
@@ -44,7 +41,7 @@ import winsound
 import pyautogui as pag
 import cv2 as cv
 
-import t
+import image_function
 
 
 def bind(context):
@@ -217,6 +214,9 @@ def checkLieDetection(pyautogui, indic = 1):
 if __name__ == "__main__":
         
     pag.FAILSAFE = True
+
+    # for img locating
+    imgf = image_function()
     
     #random gap
     rdm_gap = random.uniform(0.1, 0.2)
@@ -229,32 +229,34 @@ if __name__ == "__main__":
     c = interception()
     d = bind(c)
         
-    # Get reasonable minimap (caution: without words of 'minimap' and 'arc')
-    try:
+    # # 1s way to Get reasonable minimap (caution: without words of 'minimap' and 'arc')
+    # try:
         
-        # yellow_bulb_location = pag.locateOnScreen('./person_bottom_minimap.png')
-        # minimap_bottom_y = arc_location[1]-60
-        minimap_bottom_y = 130
-        print('minimap_bottom_y: ', minimap_bottom_y)
-        # exit()        
+    #     # yellow_bulb_location = pag.locateOnScreen('./person_bottom_minimap.png')
+    #     # minimap_bottom_y = arc_location[1]-60
+    #     minimap_bottom_y = 130
+    #     print('minimap_bottom_y: ', minimap_bottom_y)
+    #     # exit()        
         
-        # world_minimap_location = pag.locateOnScreen('./world_minimap.png')
-        # minimap_right_x = world_minimap_location[0]+40
-        # print('minimap_right_x: ', minimap_right_x)
-        # exit()
+    #     # world_minimap_location = pag.locateOnScreen('./world_minimap.png')
+    #     # minimap_right_x = world_minimap_location[0]+40
+    #     # print('minimap_right_x: ', minimap_right_x)
+    #     # exit()
 
-        minimap_right_x = 250
-        print('before minimap')
-        # img = t.get_minimap_image(0, minimap_bottom_y, 0, minimap_right_x)
-        print('after minimap')
+    #     minimap_right_x = 250
+    #     print('before minimap')
+    #     # img = t.get_minimap_image(0, minimap_bottom_y, 0, minimap_right_x)
+    #     print('after minimap')
 
-        # exit()
+    #     # exit()
 
-    except TypeError:
-        # pass
-        print(TypeError)
-        # pag.alert(title = 'ERROR', text = 'Not in bot map', button = 'OK')
-        exit()
+    # except TypeError:
+    #     # pass
+    #     print(TypeError)
+    #     # pag.alert(title = 'ERROR', text = 'Not in bot map', button = 'OK')
+    #     exit()
+    
+    # 2nd way to get resonable minimap wih cv2
     
 
     # test
